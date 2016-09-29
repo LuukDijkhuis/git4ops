@@ -1,8 +1,6 @@
 
 [//]: # "purpose: demo file for version control" 
 [//]: # "author : Luuk Dijkhuis" 
-[//]: # "init   : 20160929" 
-[//]: # "version: 0.0.1" 
 
 # GIT4OPS
 ## waarom versiebeheer met een SCM tool
