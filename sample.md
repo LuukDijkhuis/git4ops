@@ -20,7 +20,9 @@ Je weet altijd waar de meest recente en beheerde versie staat en hoe je daar aan
 
 ### gestructureerde opslag en historie van wijzigingen
 
+
 ### PRECIES weten wat er is veranderd en altijd terug kunnen
+
 
 ### met meer dan 1 persoon aan dezelfde code werken
 
