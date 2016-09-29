@@ -27,11 +27,11 @@ Er is een vaste structuur, altijd dezelfde technische manier van opslaan
 
 
 ### PRECIES weten wat er is veranderd en altijd terug kunnen
+
+### met meer dan 1 persoon aan dezelfde code werken
 Doordat de tool bijhoudt wie wat het laatst heeft ingechecked, en checkt of er verschillen en conflicten zijn kun je met meerdere
 personen aan dezelfde code werken zonder dat je elkaars werk zomaar overschrijft. De wijzigingen van beide bijdragers 
 kunnen worden gemerged, en als er een conflict is word je daar op gewezen zodat je heel gecontroleerd de correcte situatie kunt bepalen.
-
-### met meer dan 1 persoon aan dezelfde code werken
 
 ### afhankelijkheden beheren met versies van andere code
 
