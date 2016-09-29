@@ -11,3 +11,6 @@
 - gestructureerde opslag en historie van wijzigingen
 - PRECIES weten wat er is veranderd en altijd terug kunnen
 - met meer dan 1 persoon aan dezelfde code werken
+- afhankelijkheden beheren met versies van andere code
+- hotfixes/bugfixes parallel aan onderhanden werk 
+- "aanwijsbaar" maakt "testbaar en herhaalbaar" mogelijk
