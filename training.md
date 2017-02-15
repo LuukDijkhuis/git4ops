@@ -64,7 +64,10 @@ Wat staat er in:  (dir of ls)
 README.txt
 ```
 
-Maak nu een file aan met iets er in. Bijvoorbeeld ``` echo 'Hello world!' >> hithere.txt ``` 
+Maak nu een file aan met iets er in.  
+>VOER UIT:
+
+``` echo 'Hello world!' >> hithere_jouw-naam.txt ``` (dus met jouw naam ingevuld)
 
 Nog een keer ``` git status ```   en je ziet:
 
@@ -72,7 +75,7 @@ Nog een keer ``` git status ```   en je ziet:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	hithere.txt
+	hithere_jouw-naam.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 
