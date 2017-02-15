@@ -3,8 +3,13 @@
 ## waarom git
 ## config en logon
 ## init en clone
-## add en commit
-## push en pull
+## add en rm
+## commit en commitmessage
+## remote
+## push
+## fetch, merge, pull
 ## conflicten
 ## branch en merge
 ## cherrypicking
+## oh shit, git
+
