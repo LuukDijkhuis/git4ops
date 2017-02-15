@@ -80,8 +80,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 De uitleg spreekt voor zich: we zien een file in de repo directory staan die git nog niet kent. Verder een aantal tips voor wat je nu kunt doen. 
 
 ## uitleg: de staging area
-Even een uitstapje naar wat er nu gebeurt. 
+Even een uitstapje naar wat er nu gebeurt. (whiteboard)
+
+bouwen, testen, klaarzetten en tussenstand bewaren, cyclus, samenhangend brokje af: publiceren.
+
+
 ## klaarzetten: add en rm
+
 ## tussenstand bewaren: commit en commitmessage
 ## voor jezelf of ook voor anderen: remote
 ## publiceren: push
