@@ -9,7 +9,6 @@
 - gestructureerde opslag en historie van wijzigingen
 - PRECIES weten wat er is veranderd en altijd terug kunnen
 - met meer dan 1 persoon aan dezelfde code werken
-- afhankelijkheden beheren met versies van andere code
 - hotfixes/bugfixes parallel aan onderhanden werk 
 - "aanwijsbaar" maakt "testbaar en herhaalbaar" mogelijk
 
@@ -39,9 +38,10 @@ kunnen worden gemerged, en als er een conflict is word je daar op gewezen zodat 
 
 
 ### hotfixes/bugfixes parallel aan onderhanden werk 
-
+Doordat je controle hebt over alle microstappen in de ontwikkeling vand de code kun je heel precies bijhouden  welke versie je in productie hebt staan. Je kunt dan precies verschil maken tussen wat je aan het doorontwikkelen bent en op welke versie je een eventuele productie-hotfix moet  uitrollen. Ook alle afhankelijke data testcases en -scripts passen precies op die versie, dus je kunt altijd met een consistente samenhangende set software en configuratie aan het werk.
 
 ### "aanwijsbaar" maakt "testbaar en herhaalbaar" mogelijk
+Als je niet weet over welke code je het precies hebt, dan kun je op je buik schrijven dat je precies weet wat het in productie gaat doen.
 
 
 
