@@ -67,7 +67,7 @@ README.txt
 Maak nu een file aan met iets er in.  
 >VOER UIT:
 
-``` echo 'Hello world!' >> hithere_jouw-naam.txt ``` (dus met jouw naam ingevuld)
+``` echo 'Hello world!' >> hithere_jouwnaam.txt ``` (dus met jouw naam ingevuld)
 
 Nog een keer ``` git status ```   en je ziet:
 
@@ -75,7 +75,7 @@ Nog een keer ``` git status ```   en je ziet:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	hithere_jouw-naam.txt
+	hithere_jouwnaam.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 
@@ -88,10 +88,69 @@ Even een uitstapje naar wat er nu gebeurt. (whiteboard)
 bouwen, testen, klaarzetten en tussenstand bewaren, cyclus, samenhangend brokje af: publiceren.
 
 
-## klaarzetten: add en rm
+
+## klaarzetten: add
+We willen niet alleen die file toevoegen, we willen ook iets aan de README.txt veranderen. 
+>VOER UIT:
+
+Voeg een willekeurige tekst toe aan de README.txt
+
+```git status```
+
+Goed, we zijn even tevreden met wat we gedaan hebben en willen een tussenstand bewaren. Nu hebben we twee heel verschillende dingen gedaan, en dat willen we eigenlijk onthouden. Dus gaan we die twee dingen apart als actie in de tussenstand zetten.
+
+>VOER UIT:
+
+``` git add hithere_jouwnaam.txt ```
+
+Wat je daarmee doet is: "ik voeg aan de tussenstand-bewaar-actie dit bestand toe, want die hoort bij de verandering die ik gedaan heb". Die README.txt actie deed je om een heel andere reden, dus die doen we straks. 
 
 ## tussenstand bewaren: commit en commitmessage
-## voor jezelf of ook voor anderen: remote
+Je hebt nu klaargezet wat je wilt bewaren, dus daar gaan we dan:
+
+>VOER UIT:
+
+``` git commit -m "Adds hello world message" ```
+
+Met git commit stuur je het setje changes dat je met git add had toegevoegd naar de staging area (zie plaatje). 
+> Een correcte commit message (``` -m "commit message" ``` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (```git add```), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
+
+<br/>
+> VOER UIT:
+
+```git status```
+
+O ja, we waren nog niet klaar, we hadden nog iets veranderd. 
+>VOER UIT:
+
+```
+git commit -a -m "adds remark to the README for educational purposes"
+git status
+```
+
+De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commit. Wees daar voorzichtig mee, maar het is wel heel handig als je een heleboel files hebt geraakt voor één logische wijziging, dan hoef je ze niet allemaal per stuk toe te voegen, waardoor je minder makkelijk eentje vergeet. 
+
+Toegegeven: niet heel informatief commentaar, maar iedereen heeft zelf een tekst bedacht dus comment zelf maar iets passends voor waarom je die tekst hebt toegevoegd. De tekst zelf zie je wel in de code, dus die hoeft niet in het comment.
+
+>Het is conventie om code comments en git commit comments in het Engels te schrijven, zodat iedereen later kan lezen wat er aan de hand is. Als je het heel netjes wilt doen (en dat willen we) dan schrijf je in de derde persoon: [this change] "adds remark to" etc.
+
+Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is gelijk aan de staging area. 
+
+
+## wat is er allemaal gebeurd: git log
+>VOER UIT:
+
+``` git log ```
+
+Je ziet nu de commits langskomen. git log heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
+>VOER UIT:
+
+``` git help log ```
+
+Je ziet, een enorme lap opties. 
+
+
+## alleen voor jezelf of ook voor anderen: remote
 ## publiceren: push
 ## werk van anderen ophalen: fetch, merge, pull
 ## uitleg: conflicten
