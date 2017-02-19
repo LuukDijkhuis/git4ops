@@ -67,7 +67,7 @@ README.txt
 Maak nu een file aan met iets er in.  
 >VOER UIT:
 
-``` echo 'Hello world!' >> hithere_jouw-naam.txt ``` (dus met jouw naam ingevuld)
+``` echo 'Hello world!' >> hithere_your-name.txt ``` (dus met jouw naam ingevuld)
 
 Nog een keer ``` git status ```   en je ziet:
 
@@ -75,7 +75,7 @@ Nog een keer ``` git status ```   en je ziet:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	hithere_jouw-naam.txt
+	hithere_your-name.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 
@@ -101,7 +101,7 @@ Goed, we zijn even tevreden met wat we gedaan hebben en willen een tussenstand b
 
 >VOER UIT:
 
-``` git add hithere_jouw-naam.txt ```
+``` git add hithere_your-name.txt ```
 
 Wat je daarmee doet is: "ik voeg aan de tussenstand-bewaar-actie dit bestand toe, want die hoort bij de verandering die ik gedaan heb". Die README.txt actie deed je om een heel andere reden, dus die doen we straks. 
 
