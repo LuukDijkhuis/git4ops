@@ -179,6 +179,7 @@ Als je een aantal commits hebt verzameld die samen een logisch samenhangend brok
 
 
 ## uitleg: conflicten
-## even parallel iets repareren: branch en merge
+## [tekst] branch
+## even tussendoor iets repareren: stash
 ## ehbo: oh shit, git
 
