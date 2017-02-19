@@ -156,18 +156,28 @@ Je ziet, een enorme lap opties om de log vorm te geven, wat op zich ook al een t
 ## wat is er veranderd in een commit
 >VOER UIT:
 
+```git log```
+
 kijk naar de output van ```git log```
-Kies twee commits uit. Doe ```git diff 
+Kies twee commits uit. Doe ```git diff [commit2]  [commit1]```
+
+
 
 
 
 ## alleen voor jezelf of ook voor anderen: remote
 UITLEG: Whiteboard!
+remote, origin, master
 
+
+## werk van anderen ophalen: fetch, merge, pull
 
 
 ## publiceren: push
-## werk van anderen ophalen: fetch, merge, pull
+Als je een aantal commits hebt verzameld die samen een logisch samenhangend brokje functionaliteit vormen dan kun je publiceren wat je hebt gemaakt. Hoe groot dat brokje is hangt van de context af, bij een bugfix is het soms maar één character :-) In het algemeen is de richtlijn: mik op KLEINE brokjes, oftewel: wacht niet te lang met publiceren. Hoe eerder de integratie, hoe kleiner de kans op uit elkaar lopen van versies.
+
+
+
 ## uitleg: conflicten
 ## even parallel iets repareren: branch en merge
 ## ehbo: oh shit, git
