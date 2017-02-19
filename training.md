@@ -132,7 +132,7 @@ De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commi
 
 Toegegeven: niet heel informatief commentaar, maar iedereen heeft zelf een tekst bedacht dus comment zelf maar iets passends voor waarom je die tekst hebt toegevoegd. De tekst zelf zie je wel in de code, dus die hoeft niet in het comment.
 
->Het is conventie om code comments en git commit comments in het Engels te schrijven, zodat iedereen later kan lezen wat er aan de hand is. Als je het heel netjes wilt doen (en dat willen we) dan schrijf je in de derde persoon: [this change] "adds remark to" etc.
+>Het is conventie om code comments en git commit comments in het Engels te schrijven, zodat iedereen later kan lezen wat er aan de hand is. Als je het heel netjes wilt doen (en dat willen we) dan schrijf je in de derde persoon: [this change] "adds remark to" of als imperatief "add remark to" etc. Je ziet beide in de praktijk. Kies als team één stijl.
 
 Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is gelijk aan de staging area. 
 
@@ -143,14 +143,29 @@ Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is geli
 ``` git log ```
 
 Je ziet nu de commits langskomen. git log heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
+
+In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en de (eerste regel van de) commit message. Die info is belangrijk voor het geval dat je vergissingen wilt herstellen. Je kunt dan met de naam van de commit precies de staat van de codebase aanwijzen op een bepaald moment. Al deze "vlaggetjes" worden gedeeld met iedereen die aan de codebase werkt.
+
+
 >VOER UIT:
 
 ``` git help log ```
 
-Je ziet, een enorme lap opties. 
+Je ziet, een enorme lap opties om de log vorm te geven, wat op zich ook al een teken is hoe belangrijk de commitmessages zijn.
+
+## wat is er veranderd in een commit
+>VOER UIT:
+
+kijk naar de output van ```git log```
+Kies twee commits uit. Doe ```git diff 
+
 
 
 ## alleen voor jezelf of ook voor anderen: remote
+UITLEG: Whiteboard!
+
+
+
 ## publiceren: push
 ## werk van anderen ophalen: fetch, merge, pull
 ## uitleg: conflicten
