@@ -153,7 +153,7 @@ In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en
 ``` git help log ```
 
 Je ziet, heel veel opties om de log vorm te geven.
-Probeer een paar log opties, bijvoorbeeld ```git log --pretty=oneline``` of 
+Probeer een paar log opties, bijvoorbeeld ```git log --oneline --decorate``` of 
 ```git log --pretty=format:"%h %ar [%an] - %s"```
 
 
