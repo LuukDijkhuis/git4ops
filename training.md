@@ -189,14 +189,6 @@ remote, origin, master
 
 !["git remote add origin"](./git_remote.png)
 
-## werk van anderen ophalen: fetch, merge, pull
-Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
-
-
-
- 
-
-
 ## publiceren: push
 Als je een aantal commits hebt verzameld die samen een logisch samenhangend brokje functionaliteit vormen dan kun je publiceren wat je hebt gemaakt. Hoe groot dat brokje is hangt van de context af, bij een bugfix is het soms maar één character :-) In het algemeen is de richtlijn: mik op KLEINE brokjes, oftewel: wacht niet te lang met publiceren. Hoe eerder de integratie, hoe kleiner de kans op uit elkaar lopen van versies.
 
@@ -205,6 +197,17 @@ Git beschermt de repo tegen het blindelings opsturen van een toestand die niet i
 >Voer uit:
 
 ```git push```
+
+
+
+
+## werk van anderen ophalen: fetch, merge, pull
+Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
+
+
+
+ 
+
 
 
 ## uitleg: conflicten
