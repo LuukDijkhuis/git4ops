@@ -152,28 +152,52 @@ In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en
 ``` git help log ```
 
 Je ziet, heel veel opties om de log vorm te geven.
-Probeer een paar, bijvoorbeeld ```git log --pretty=oneline``` of 
+Probeer een paar log opties, bijvoorbeeld ```git log --pretty=oneline``` of 
 ```git log --pretty=format:"%h %ar [%an] - %s"```
 
 
-## wat is er veranderd in een commit
+## wat is er veranderd in een commit: git diff
 >VOER UIT:
 
-```git log```
+```
+git status	
+git log
+```
 
-kijk naar de output van ```git log```
-Kies twee commits uit. Doe ```git diff [commit2]  [commit1]```
-Je hoeft niet de hele hash in te kloppen
+Als je nog uncommitted changes hebt: ```git diff``` om de verschillen met de huidige kop van de index te zien.
 
+Anders:
+Kijk naar de output van ```git log```
+Kies een commit uit. Voer uit ```git diff [commit-hash]```
+>Je hoeft niet de hele hash in te kloppen, de eerste 7 tekens zijn al uniek genoeg
 
+Wat je ziet is het verschil van je huidige staat met de gekozen commit. Je kunt ook twee commits met elkaar vergelijken ```git diff [hash1] [hash2]```
+
+Ook bij diff: veel opties. Default laat diff van vrij grote blokken de verschillen zien, dat is niet per se overzichtelijk. Met ```diff -w``` negeer je whitespace (pas op met python scripts! :-)) en met ```diff --word-diff``` toon je de verschillen binnen het tekstblok. Probeer maar
+
+>Voer uit:
+>
+``` git diff -w --word-diff [commit2] [commit1] ```
+
+Speel wat met andere diff opties.
 
 
 ## alleen voor jezelf of ook voor anderen: remote
 UITLEG: Whiteboard!
 remote, origin, master
 
+@@@ PLAATJE @@@
 
 ## werk van anderen ophalen: fetch, merge, pull
+Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
+
+Git beschermt de repo tegen het blindelings opsturen van een toestand die niet in lijn is gebracht met de laatste stand van zaken.
+
+>Voer uit:
+
+```git push```
+
+ 
 
 
 ## publiceren: push
