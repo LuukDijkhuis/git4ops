@@ -215,7 +215,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 ## werk van anderen ophalen: fetch, merge, pull
-Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
+Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. 
+Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. 
+Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". 
+De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. 
+Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
 
 
 
