@@ -128,21 +128,21 @@ git commit -a -m "adds remark to the README for educational purposes"
 git status
 ```
 
-De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commit. Wees daar voorzichtig mee, maar het is wel heel handig als je een heleboel files hebt geraakt voor één logische wijziging, dan hoef je ze niet allemaal per stuk toe te voegen, waardoor je minder makkelijk eentje vergeet. 
-
-Toegegeven: niet heel informatief commentaar, maar iedereen heeft zelf een tekst bedacht dus comment zelf maar iets passends voor waarom je die tekst hebt toegevoegd. De tekst zelf zie je wel in de code, dus die hoeft niet in het comment.
+>De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commit. >Wees daar voorzichtig mee, maar het is wel heel handig als je een heleboel files hebt geraakt voor één logische wijziging, dan hoef je ze niet allemaal per stuk toe te voegen, waardoor je minder makkelijk eentje vergeet. 
 
 >Het is conventie om code comments en git commit comments in het Engels te schrijven, zodat iedereen later kan lezen wat er aan de hand is. Als je het heel netjes wilt doen (en dat willen we) dan schrijf je in de derde persoon: [this change] "adds remark to" of als imperatief "add remark to" etc. Je ziet beide in de praktijk. Kies als team één stijl.
 
 Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is gelijk aan de staging area. 
 
+>VOER UIT:<br/>
+>maak een aantal wijzigingen in je omgeving. Voeg files toe, edit wat in die files. Vervang een woord, wissel woorden om etc. Add en commit steeds tussendoor met een **betekenisvolle** commitmessage, zodat je straks een setje commits hebt om doorheen te bladeren. 
 
 ## wat is er allemaal gebeurd: git log
 >VOER UIT:
 
 ``` git log ```
 
-Je ziet nu de commits langskomen. git log heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
+Je ziet nu al je commits langskomen. ```git log``` heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
 
 In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en de (eerste regel van de) commit message. Die info is belangrijk voor het geval dat je vergissingen wilt herstellen. Je kunt dan met de naam van de commit precies de staat van de codebase aanwijzen op een bepaald moment. Al deze "vlaggetjes" worden gedeeld met iedereen die aan de codebase werkt.
 
@@ -151,7 +151,10 @@ In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en
 
 ``` git help log ```
 
-Je ziet, een enorme lap opties om de log vorm te geven, wat op zich ook al een teken is hoe belangrijk de commitmessages zijn.
+Je ziet, heel veel opties om de log vorm te geven.
+Probeer een paar, bijvoorbeeld ```git log --pretty=oneline``` of 
+```git log --pretty=format:"%h %ar [%an] - %s"```
+
 
 ## wat is er veranderd in een commit
 >VOER UIT:
@@ -160,7 +163,7 @@ Je ziet, een enorme lap opties om de log vorm te geven, wat op zich ook al een t
 
 kijk naar de output van ```git log```
 Kies twee commits uit. Doe ```git diff [commit2]  [commit1]```
-
+Je hoeft niet de hele hash in te kloppen
 
 
 
