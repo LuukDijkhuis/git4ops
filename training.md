@@ -1,4 +1,6 @@
 #git4ops
+
+
 ## wat is git
 git is een tool die je tegen jezelf en tegen anderen beschermt. Je kunt je scripts veranderen, stukmaken, verbeteren, wat je maar wilt. En je kunt altijd weer terug omdat je steeds tussentijds elke toestand opslaat. Met git kun je zonder zorgen met meerdere mensen tegelijk aan code werken. Maar het helpt je ook in je eentje. Het is een vangnet tegen vergissingen, daardoor ga je makkelijker mooie dingen proberen: het kan toch geen kwaad, tot je het publiceert.
 
@@ -86,8 +88,6 @@ De uitleg spreekt voor zich: we zien een file in de repo directory staan die git
 Even een uitstapje naar wat er nu gebeurt. (whiteboard)
 
 bouwen, testen, klaarzetten en tussenstand bewaren, cyclus, samenhangend brokje af: publiceren.
-
-@@@ PLAATJE @@@
 
 
 ## klaarzetten: add
@@ -183,11 +183,13 @@ Ook bij ```diff```: veel opties. Default laat diff van vrij grote blokken de ver
 Speel wat met andere diff opties.
 
 
-## alleen voor jezelf of ook voor anderen: remote
+## alleen voor jezelf of ook voor anderen: git remote
 UITLEG: Whiteboard!
 remote, origin, master
 
 !["git remote add origin"](./git_remote.png)
+
+Let op: "origin" is alleen maar de default naam, je mag helemaal zelf weten hoe je die remote repo zelf wilt refereren. Het is wel handig daar iets over af te spreken, want als je met een collega pairt of iemand komt je even helpen dan is het niet praktisch als iedereen een andere naam bedenkt voor een bepaalde remote repo ref.
 
 ## publiceren: push
 Als je een aantal commits hebt verzameld die samen een logisch samenhangend brokje functionaliteit vormen dan kun je publiceren wat je hebt gemaakt. Hoe groot dat brokje is hangt van de context af, bij een bugfix is het soms maar één character :-) In het algemeen is de richtlijn: mik op KLEINE brokjes, oftewel: wacht niet te lang met publiceren. Hoe eerder de integratie, hoe kleiner de kans op uit elkaar lopen van versies.
@@ -211,24 +213,99 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-
-
+Je moet nu eerst zorgen dat de staat van jouw local repo overeenkomt met die van de remote repo plus jouw wijzigingen. Dan kun je het geheel weer een stapje verder brengen en dat publiceren. 
 
 ## werk van anderen ophalen: fetch, merge, pull
-Vóór je gaat publiceren naar remote haal je eerst de huidige stand van zaken op. 
+Vóór je gaat publiceren naar remote haal je dus eerst de huidige stand van zaken op. 
 Het kan immers zijn dat anderen wijzigingen hebben aangebracht in files waar jij ook net mee bezig was. 
+
 Als die veranderingen op andere plekken in het bestand zitten dan worden die veranderingen in elkaar geschoven: dat heet een "merge". 
-De bijbehorende (automatische) tests worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles moeten werken. 
+De bijbehorende (automatische) tests en documentatie worden natuurlijk ook mee ge-update dus als je na het in elkaar schuiven van de nieuwe situatie je tests weer runt zou alles weer/nog moeten werken. 
 Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat na te gaan en lokaal te repareren.
 
 
+>Voer uit:
 
- 
+```git fetch```
+Dit haalt de wijzigingen op van de remote repository, maar voert nog geen merge uit.  
+Dat maakt het mogelijk om van tevoren te kijken wat de wijzigingen zijn voor je gaat mergen. 
 
+```git merge``` 
+Voert de wijzigingen uit op je working set.
+
+```git pull```
+Doet ```git fetch``` en ```git merge``` na elkaar, en nog wat magic eromheen. 
+
+Meestal zal ```git pull``` best okee werken, maar soms, bij complexe wijzigingen, willen er nog wel eens allerlei onhandige conflictsituaties optreden. Zie later. In die gevallen is het praktisch om eerst te fetchen, te inspecteren, mogelijk aan te passen en dan te mergen. We komen over dit alles nog te spreken in het onderwerp "branch"
 
 
 ## uitleg: conflicten
+Stel je hebt deze file, genaamd ```hithere.txt```:
+
+```
+@echo off
+echo "hello World"
+```
+en je wilt graag iets anders groeten
+
+```
+@echo off
+echo "hello Mars" 
+```
+
+maar je collega elders verandert het in
+
+```
+@echo off
+echo "hello Venus"
+``` 
+
+Je draait allebei de aangepaste test, je bent allebei tevreden, add, commit -m en na een tijdje "push". De eerste merkt niks, dat gaat prima, dus origin/master bevat nu "hello Mars". De tweede wil pushen, maar krijgt die melding van zonet: rejected, fetch first. Okee dan, ```git pull``` en dan gebeurt er iets nieuws: 
+
+```
+[blabla]
+21269ea..759f990  master     -> origin/master
+Auto-merging hithere.txt
+CONFLICT (content): Merge conflict in hithere.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Wat je nu in de file ziet is het volgende:
+
+```
+@echo off
+<<<<<<< HEAD
+echo "hello Venus"
+=======
+echo "hello Mars"
+
+>>>>>>> 759f990bdac88dac668a6fce10085e43ab98f301
+```
+
+Merk op dat beide varianten in deze samengestelde file staan. De ene ```<<<<<<< HEAD``` is jouw lokale variant, de andere ```>>>>>>> 759f990bdac88dac668a6fce10085e43ab98f301``` is die van origin/master. Je ziet dat de merge aangeeft dat je van hash 21269ea naar 759f990 gaat, en dat de getoonde hash bij >>>>>> die laatste is. Nu kun je zelf de nieuwe variant maken.
+
+```
+@echo off
+echo "hello Mars and Venus"
+```
+
+en die inchecken. 
+
+```
+(update tests)
+git add hithere.txt
+(run tests)
+git commit -m "resolve merge conflict"
+git push
+```
+
+Als je collega nu ```git pull``` doet dan krijgt hij de resolved versie binnen. Zonder conflict want git ziet dat we weer een stapje verder zijn.
+
+
+
 ## een stukje ontwikkeling tijdelijk isoleren: branch
+
+
 ## even tussendoor iets repareren: stash
 ## ehbo: oh shit, git
 
