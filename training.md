@@ -24,23 +24,23 @@ Met git config kun je nog veel meer dingen regelen, zoals allerlei default gedra
 Git organiseert alles van een product/project in een "repository". Je kunt een nieuwe aanmaken, of meegaan op een al bestaande voor dat product.
 Laten we een nieuwe aanmaken: git init (van "initialize")
 
-``` 
+` 
 git init 
-```
+`
 > dit maakt van je current directory een git repository
 
-```
+`
 git init directorynaam
-```
+`
 > maakt een directory aan en maakt daar een git repo van 
 
 ### een bestaande repo gebruiken
-Als er al een repository bestaat voor dit product kun je er mee gaan werken door ``` git clone reponaam ```
+Als er al een repository bestaat voor dit product kun je er mee gaan werken door ` git clone reponaam `
 Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle status en historie. 
 
 >VOER UIT:
 
-``` git clone https://dinges/danges/git4opstraining ```
+` git clone https://dinges/danges/git4opstraining `
 
 @@@ AANMAKEN en voeg een README.txt toe @@@
 
@@ -48,14 +48,14 @@ Je hebt een kopie van de trainings repo lokaal staan: Nu kun je aan het werk.
 
 
 ## hoe staan we er voor: status
-Je kunt nu files aanmaken op je lokale repo directory. Met ``` git status ``` kun je kijken in welke toestand die files zich bevinden. Kent git de file al of niet, heb je iets veranderd waar git nog niet van weet etc. 
+Je kunt nu files aanmaken op je lokale repo directory. Met ` git status ` kun je kijken in welke toestand die files zich bevinden. Kent git de file al of niet, heb je iets veranderd waar git nog niet van weet etc. 
 > VOER UIT:
 
-``` git status ```
+` git status `
 
 Je ziet nu:
 
-``` 
+```
 On branch master
 nothing to commit, working directory clean
 ```
@@ -69,9 +69,9 @@ README.txt
 Maak nu een file aan met iets er in.  
 >VOER UIT:
 
-``` echo 'Hello world!' >> hithere_your-name.txt ``` (dus met jouw naam ingevuld)
+` echo 'Hello world!' >> hithere_your-name.txt ` (dus met jouw naam ingevuld)
 
-Nog een keer ``` git status ```   en je ziet:
+Nog een keer ` git status `   en je ziet:
 
 ``` On branch master
 Untracked files:
@@ -96,13 +96,13 @@ We willen niet alleen die file toevoegen, we willen ook iets aan de README.txt v
 
 Voeg een willekeurige tekst toe aan de README.txt
 
-```git status```
+`git status`
 
 Goed, we zijn even tevreden met wat we gedaan hebben en willen een tussenstand bewaren. Nu hebben we twee heel verschillende dingen gedaan, en dat willen we eigenlijk onthouden. Dus gaan we die twee dingen apart als actie in de tussenstand zetten.
 
 >VOER UIT:
 
-``` git add hithere_your-name.txt ```
+` git add hithere_your-name.txt `
 
 Wat je daarmee doet is: "ik voeg aan de tussenstand-bewaar-actie dit bestand toe, want die hoort bij de verandering die ik gedaan heb". Die README.txt actie deed je om een heel andere reden, dus die doen we straks. 
 
@@ -111,15 +111,15 @@ Je hebt nu klaargezet wat je wilt bewaren, dus daar gaan we dan:
 
 >VOER UIT:
 
-``` git commit -m "Adds hello world message" ```
+` git commit -m "Adds hello world message" `
 
 Met git commit stuur je het setje changes dat je met git add had toegevoegd naar de staging area (zie plaatje). 
-> Een correcte commit message (``` -m "commit message" ``` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (```git add```), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
+> Een correcte commit message (` -m "commit message" ` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (`git add`), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
 
 <br/>
 > VOER UIT:
 
-```git status```
+`git status`
 
 O ja, we waren nog niet klaar, we hadden nog iets veranderd. 
 >VOER UIT:
@@ -141,20 +141,20 @@ Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is geli
 ## wat is er allemaal gebeurd: git log
 >VOER UIT:
 
-``` git log ```
+` git log `
 
-Je ziet nu al je commits langskomen. ```git log``` heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
+Je ziet nu al je commits langskomen. `git log` heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
 
 In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en de (eerste regel van de) commit message. Die info is belangrijk voor het geval dat je vergissingen wilt herstellen. Je kunt dan met de naam van de commit precies de staat van de codebase aanwijzen op een bepaald moment. Al deze "vlaggetjes" worden gedeeld met iedereen die aan de codebase werkt.
 
 
 >VOER UIT:
 
-``` git help log ```
+` git help log `
 
 Je ziet, heel veel opties om de log vorm te geven.
-Probeer een paar log opties, bijvoorbeeld ```git log --oneline --decorate``` of 
-```git log --pretty=format:"%h %ar [%an] - %s"```
+Probeer een paar log opties, bijvoorbeeld `git log --oneline --decorate` of 
+`git log --pretty=format:"%h %ar [%an] - %s"`
 
 
 ## wat is er veranderd in een commit: git diff
@@ -165,22 +165,30 @@ git status
 git log
 ```
 
-Als je nog uncommitted changes hebt: ```git diff``` om de verschillen met de huidige kop van de index te zien.
+Als je nog uncommitted changes hebt: `git diff` om de verschillen met de huidige kop van de index te zien.
 
 Anders:
-Kijk naar de output van ```git log```
-Kies een commit uit. Voer uit ```git diff [commit-hash]```
+Kijk naar de output van `git log`
+Kies een commit uit. Voer uit `git diff [commit-hash]`
 >Je hoeft niet de hele hash in te kloppen, de eerste 7 tekens zijn al uniek genoeg
 
-Wat je ziet is het verschil van je huidige staat met de gekozen commit. Je kunt ook twee commits met elkaar vergelijken ```git diff [hash1] [hash2]```
+Wat je ziet is het verschil van je huidige staat met de gekozen commit. Je kunt ook twee commits met elkaar vergelijken `git diff [hash1] [hash2]`
 
-Ook bij ```diff```: veel opties. Default laat diff van vrij grote blokken de verschillen zien, dat is niet per se overzichtelijk. Met ```diff -w``` negeer je whitespace (pas op met python scripts! :-)) en met ```diff --word-diff``` toon je de verschillen binnen het tekstblok. Probeer maar
+Ook bij `diff`: veel opties. Default laat diff van vrij grote blokken de verschillen zien, dat is niet per se overzichtelijk. Met `diff -w` negeer je whitespace (pas op met python scripts! :-)) en met `diff --word-diff` toon je de verschillen binnen het tekstblok. Probeer maar
 
 >Voer uit:
 >
-``` git diff -w --word-diff [commit2] [commit1] ```
+` git diff -w --word-diff [commit2] [commit1] `
 
 Speel wat met andere diff opties.
+
+
+## kies welke versie je wilt bekijken: git checkout
+Als je de hele log reeks bekijkt zie je dat elke verandering die is gecommit aangeduid is met een hash. Je kunt elk van die hashes uitchecken en naar je working directory halen. 
+
+`git checkout [hash]`
+
+je krijgt de codebase dan precies in de toestand waarin hij toen was. Het is een heel gerust
 
 
 ## alleen voor jezelf of ook voor anderen: git remote
@@ -198,7 +206,7 @@ Git beschermt de repo tegen het blindelings opsturen van een toestand die niet i
 
 >Voer uit:
 
-```git push```
+`git push`
 
 je ziet iets als:
 
@@ -226,21 +234,21 @@ Mochten die wijzigingen elkaar negatief beïnvloeden dan heb je nu tijd om dat n
 
 >Voer uit:
 
-```git fetch```
+`git fetch`
 Dit haalt de wijzigingen op van de remote repository, maar voert nog geen merge uit.  
 Dat maakt het mogelijk om van tevoren te kijken wat de wijzigingen zijn voor je gaat mergen. 
 
-```git merge``` 
+`git merge` 
 Voert de wijzigingen uit op je working set.
 
-```git pull```
-Doet ```git fetch``` en ```git merge``` na elkaar, en nog wat magic eromheen. 
+`git pull`
+Doet `git fetch` en `git merge` na elkaar, en nog wat magic eromheen. 
 
-Meestal zal ```git pull``` best okee werken, maar soms, bij complexe wijzigingen, willen er nog wel eens allerlei onhandige conflictsituaties optreden. Zie later. In die gevallen is het praktisch om eerst te fetchen, te inspecteren, mogelijk aan te passen en dan te mergen. We komen over dit alles nog te spreken in het onderwerp "branch"
+Meestal zal `git pull` best okee werken, maar soms, bij complexe wijzigingen, willen er nog wel eens allerlei onhandige conflictsituaties optreden. Zie later. In die gevallen is het praktisch om eerst te fetchen, te inspecteren, mogelijk aan te passen en dan te mergen. We komen over dit alles nog te spreken in het onderwerp "branch"
 
 
 ## uitleg: conflicten
-Stel je hebt deze file, genaamd ```hithere.txt```:
+Stel je hebt deze file, genaamd `hithere.txt`:
 
 ```
 @echo off
@@ -258,9 +266,9 @@ maar je collega elders verandert het in
 ```
 @echo off
 echo "hello Venus"
-``` 
+```
 
-Je draait allebei de aangepaste test, je bent allebei tevreden, add, commit -m en na een tijdje "push". De eerste merkt niks, dat gaat prima, dus origin/master bevat nu "hello Mars". De tweede wil pushen, maar krijgt die melding van zonet: rejected, fetch first. Okee dan, ```git pull``` en dan gebeurt er iets nieuws: 
+Je draait allebei de aangepaste test, je bent allebei tevreden, add, commit -m en na een tijdje "push". De eerste merkt niks, dat gaat prima, dus origin/master bevat nu "hello Mars". De tweede wil pushen, maar krijgt die melding van zonet: rejected, fetch first. Okee dan, `git pull` en dan gebeurt er iets nieuws: 
 
 ```
 [blabla]
@@ -282,7 +290,7 @@ echo "hello Mars"
 >>>>>>> 759f990bdac88dac668a6fce10085e43ab98f301
 ```
 
-Merk op dat beide varianten in deze samengestelde file staan. De ene ```<<<<<<< HEAD``` is jouw lokale variant, de andere ```>>>>>>> 759f990bdac88dac668a6fce10085e43ab98f301``` is die van origin/master. Je ziet dat de merge aangeeft dat je van hash 21269ea naar 759f990 gaat, en dat de getoonde hash bij >>>>>> die laatste is. Nu kun je zelf de nieuwe variant maken.
+Merk op dat beide varianten in deze samengestelde file staan. De ene `<<<<<<< HEAD` is jouw lokale variant, de andere `>>>>>>> 759f990bdac88dac668a6fce10085e43ab98f301` is die van origin/master. Je ziet dat de merge aangeeft dat je van hash 21269ea naar 759f990 gaat, en dat de getoonde hash bij >>>>>> die laatste is. Nu kun je zelf de nieuwe variant maken.
 
 ```
 @echo off
@@ -299,13 +307,19 @@ git commit -m "resolve merge conflict"
 git push
 ```
 
-Als je collega nu ```git pull``` doet dan krijgt hij de resolved versie binnen. Zonder conflict want git ziet dat we weer een stapje verder zijn.
+Als je collega nu `git pull` doet dan krijgt hij de resolved versie binnen. Zonder conflict want git ziet dat we weer een stapje verder zijn.
 
 
 
 ## een stukje ontwikkeling tijdelijk isoleren: branch
+UITLEG:
+Branch, local en remote. (Meer niet)
 
+## een speciale versie een naampje geven: tag
 
 ## even tussendoor iets repareren: stash
+
+## diversen: delete, rename
+
 ## ehbo: oh shit, git
 
