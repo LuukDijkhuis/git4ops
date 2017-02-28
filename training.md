@@ -326,6 +326,7 @@ Branch, local en remote. (Meer niet)
 
 ```
 git branch mijnbranch
+```
 
 
 ## een speciale versie een naampje geven: tag
