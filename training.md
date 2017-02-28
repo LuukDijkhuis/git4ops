@@ -7,7 +7,11 @@ git is een tool die je tegen jezelf en tegen anderen beschermt. Je kunt je scrip
 Git beschermt je tegen chaos door je creatie proces in veilige stappen te verdelen. Elke stap krijgt een label dat uniek is over de hele codebase heen.
 
 ## install, identificatie
-Na installatie (kies zelf eentje) moet je jezelf bekend maken als user.
+*   git for windows => run console from: windows prompt (middelste), CRLF:checkout to CRLF-commit to LF (bovenste), TTY: select zelf 
+
+Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog op die GUI tools terug.
+
+Na installatie moet je jezelf bekend maken als user.
 
 >VOER UIT:
 
@@ -40,7 +44,7 @@ Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle sta
 
 >VOER UIT:
 
-` git clone https://dinges/danges/git4opstraining `
+` git clone https://github.com/git4opsumcg/git4opstraining `
 
 @@@ AANMAKEN en voeg een README.txt toe @@@
 
@@ -188,7 +192,10 @@ Als je de hele log reeks bekijkt zie je dat elke verandering die is gecommit aan
 
 `git checkout [hash]`
 
-je krijgt de codebase dan precies in de toestand waarin hij toen was. Het is een heel gerust
+je krijgt de codebase dan precies in de toestand waarin hij toen was. Het is een heel geruststellend idee dat je altijd naar een bekende staat terug kunt. 
+
+De toestand die je op zeker moment hebt uitgecheckt heeft een logische naam: "HEAD". 
+
 
 
 ## alleen voor jezelf of ook voor anderen: git remote
@@ -314,6 +321,12 @@ Als je collega nu `git pull` doet dan krijgt hij de resolved versie binnen. Zond
 ## een stukje ontwikkeling tijdelijk isoleren: branch
 UITLEG:
 Branch, local en remote. (Meer niet)
+
+>Voer uit:
+
+```
+git branch mijnbranch
+
 
 ## een speciale versie een naampje geven: tag
 
