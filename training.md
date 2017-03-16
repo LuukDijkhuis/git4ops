@@ -320,13 +320,25 @@ Als je collega nu `git pull` doet dan krijgt hij de resolved versie binnen. Zond
 
 ## een stukje ontwikkeling tijdelijk isoleren: branch
 UITLEG:
-Branch, local en remote. (Meer niet)
+Branch, local en remote.
+
 
 >Voer uit:
 
 ```
 git branch mijnbranch
 ```
+Je hebt nu een Branch aangemaakt genaamd "mijnbranch", maar **je zit er nog niet op**. Om je HEAD naar de Branch te zetten doe je:
+
+>Voer uit:
+
+```git checkout mijnbranch```
+
+**Nu** zit je er op.
+
+
+
+Tip: <http://learngitbranching.js.org>, erg coole oefeningen in branchen en andere git acties.
 
 
 ## een speciale versie een naampje geven: tag
