@@ -322,28 +322,81 @@ Als je collega nu `git pull` doet dan krijgt hij de resolved versie binnen. Zond
 UITLEG:
 Branch, local en remote.
 
-
 >Voer uit:
 
 ```
 git branch mijnbranch
 ```
-Je hebt nu een Branch aangemaakt genaamd "mijnbranch", maar **je zit er nog niet op**. Om je HEAD naar de Branch te zetten doe je:
+Je hebt nu een Branch aangemaakt genaamd "mijnbranch", maar **je zit er nog niet op**. Als je nu een wijziging doet komt die op de trunk! Om je HEAD naar de Branch te zetten doe je:
 
 >Voer uit:
 
 ```git checkout mijnbranch```
 
-**Nu** zit je er op.
+**Nu** zit je er op. Als je een wijziging doet (*) dan komt die dus op de branch.
 
+```
+       		   - [mijnbranch]         -*- [mijnbranch]
+              /                      /
+[trunk] --*--+--*-   versus    --*--+ [trunk]
+```
 
+Of als shortcut `git checkout -b mijnbranch` (in één keer aanmaken en erop gaan)
 
 Tip: <http://learngitbranching.js.org>, erg coole oefeningen in branchen en andere git acties.
 
+>Voer uit: je zit nu op "mijnbranch". Maak een wijziging in hithere_jouwnaam.txt, en commit de wijziging. `git checkout master` brengt je weer terug naar de trunk. `cat hithere_jouwnaam.txt` en je ziet dat je wijziging hier niet staat. `git checkout mijnbranch` en `cat hithere_jouwnaam.txt` en ja hoor daar is je wijziging weer.
+
+Waarom zou je willen branchen? Bijvoorbeeld omdat je grote wijzigingen aan het maken bent in versie PRODUCTIE + n en je moet een verandering doen op versie PRODUCTIE. Check dan PRODUCTIE uit, maak een branch, schrijf een test, doe de wijziging, test hem en je hebt een geïsoleerde aanpassing op de productie versie. Zorg daarna dat je de aanpassing ook terugbrengt naar de Trunk.
+
+Je kunt ook een branch maken als je juist een hele grote change gaat doen waar je niet iedereen mee lastig wilt vallen. Pas als het werkt merge je het dan in de trunk. Dat heeft ook zo zijn nadelen. Maar branching en merging strategie is een apart en uitgebreid onderwerp waar we het nu niet over gaan hebben.
+
+
+
+## wijzigingen op een branch naar de trunk halen: merge
+Een branch maak je om iets tijdelijk te isoleren. Maar je hebt maar één codebase, dus die wijziging wil je meestal terugmergen in de trunk. 
+>Voer uit:
+
+```
+git checkout master
+git merge mijnbranch
+```
+>je ziet wat opmerkingen:
+
+```
+Updating 8705699..3b2388c
+Fast-forward
+ hithere_jouwnaam.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+```
+cat hithere_jouwnaam.txt
+```
+en de change zit nu ook in de trunk.
+
+Let op: je gaat naar de branche waar je het in wilt hebben, en merget daar NAARTOE! 
+Als je branch lang leeft dan is het nodig om met grote regelmaat de wijzigingen die op de trunk plaatsvinden in te mergen, anders loop je al snel zodanig uit de pas dat het stikt van de merge conflicts. Not cool. 
+
+Dus: SHORTLIVED BRANCHES of VAAK DE TRUNK IN-MERGEN!
+
 
 ## een speciale versie een naampje geven: tag
+We hadden het net over "PRODUCTIE" en "PRODUCTIE + n" dat was in abstracto bedoeld. Maar je kunt een hash daadwerkelijk een naam geven, dat is ook wel erg handig. Noem dat natuurlijk niet "PRODUCTIE" want dat verandert elke keer :-) maar geeft het een versie volgens je eigen versioning schema. 
 
-## even tussendoor iets repareren: stash
+>Voer uit:
+
+`git log`
+> kies een hash
+ 
+`git tag 0.3.1 [hash]`
+
+Taggen is een ding, je kunt retaggen en wat niet al, maar als je eenmaal een tag gepushed hebt moet je er wel afblijven. Zodra een tag publiek is staat hij voor een bepaalde toestand van de codebase waar mensen vanuit gaan. Dus als je iets aan die toestand verandert DAN IS DAT EEN ANDERE VERSIE MET EEN ANDERE NAAM EN DUS EEN ANDERE TAG. 
+
+Een bekende versioning naming convention is het RUF nummer, Release.Update.Fix waarbij je nog een variant kunt doen met vier nummers: Release.Update.Fix.Buildnr of zoiets. Je moet in je eigen context afspreken in welke situatie je vindt dat iets een release is of een update. Een mooie vuistregel is dat het een Release is als er interfaces veranderen, dus met een breaking change. Of als er een dikke Epic met totaal nieuwe features in zit, of een significante User Interface wijziging, whatever. Maar vind er iets van en houd je er aan.
+
+
+## even tussendoor iets uitchecken: stash
+
 
 ## diversen: delete, rename
 
