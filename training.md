@@ -8,7 +8,6 @@ Git beschermt je tegen chaos door je creatie proces in veilige stappen te verdel
 
 ## install, identificatie
 
-
 *   git for windows => run console from: windows prompt (middelste), CRLF:checkout to CRLF-commit to LF (bovenste), TTY: select zelf 
 
 Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog op die GUI tools terug.
@@ -29,35 +28,39 @@ Met git config kun je nog veel meer dingen regelen, zoals allerlei default gedra
 ### een nieuwe repo aanmaken
 Git organiseert alles van een product/project in een "repository". Je kunt een nieuwe aanmaken, of meegaan op een al bestaande voor dat product.
 Laten we een nieuwe aanmaken: git init (van "initialize")
+>Voer uit:
 
-` 
+`
+git init myfirstrepo
+`
+> maakt een directory 'myfirstrepo' aan en maakt daar een git repo van 
+
+Of:
+
+`
 git init 
 `
-> dit maakt van je current directory een git repository
-
-`
-git init directorynaam
-`
-> maakt een directory aan en maakt daar een git repo van 
+> dit maakt van je **current directory** een git repository
+ 
 
 ### een bestaande repo gebruiken
-Als er al een repository bestaat voor dit product kun je er mee gaan werken door ` git clone reponaam `
+Als er al een repository bestaat voor dit product kun je er mee gaan werken door `git clone username@host:repo`
 Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle status en historie. 
 
 >VOER UIT:
 
-` git clone https://github.com/git4opsumcg/git4opstraining `
+`git clone https://github.com/git4opsumcg/git4opstraining`
 
-@@@ AANMAKEN en voeg een README.txt toe @@@
+@@@TODO@@@ AANMAKEN en voeg een README.txt toe /@@@TODO@@@
 
 Je hebt een kopie van de trainings repo lokaal staan: Nu kun je aan het werk.
 
 
 ## hoe staan we er voor: status
-Je kunt nu files aanmaken op je lokale repo directory. Met ` git status ` kun je kijken in welke toestand die files zich bevinden. Kent git de file al of niet, heb je iets veranderd waar git nog niet van weet etc. 
+Je kunt nu files aanmaken op je lokale repo directory. Met `git status` kun je kijken in welke toestand die files zich bevinden. Kent git de file al of niet, heb je iets veranderd waar git nog niet van weet etc. 
 > VOER UIT:
 
-` git status `
+`git status`
 
 Je ziet nu:
 
@@ -75,7 +78,7 @@ README.txt
 Maak nu een file aan met iets er in.  
 >VOER UIT:
 
-` echo 'Hello world!' >> hithere_your-name.txt ` (dus met jouw naam ingevuld)
+`echo 'Hello world!' >> hithere_your-name.txt` (dus met jouw naam ingevuld)
 
 Nog een keer ` git status `   en je ziet:
 
@@ -108,7 +111,7 @@ Goed, we zijn even tevreden met wat we gedaan hebben en willen een tussenstand b
 
 >VOER UIT:
 
-` git add hithere_your-name.txt `
+`git add hithere_your-name.txt`
 
 Wat je daarmee doet is: "ik voeg aan de tussenstand-bewaar-actie dit bestand toe, want die hoort bij de verandering die ik gedaan heb". Die README.txt actie deed je om een heel andere reden, dus die doen we straks. 
 
@@ -117,10 +120,10 @@ Je hebt nu klaargezet wat je wilt bewaren, dus daar gaan we dan:
 
 >VOER UIT:
 
-` git commit -m "Adds hello world message" `
+`git commit -m "Adds hello world message"`
 
 Met git commit stuur je het setje changes dat je met git add had toegevoegd naar de staging area (zie plaatje). 
-> Een correcte commit message (` -m "commit message" ` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (`git add`), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
+> Een correcte commit message (`-m "commit message"` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (`git add`), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
 
 <br/>
 > VOER UIT:
@@ -147,7 +150,7 @@ Je ziet dat alles nu "schoon" is: de huidige status van je werkdirectory is geli
 ## wat is er allemaal gebeurd: git log
 >VOER UIT:
 
-` git log `
+`git log`
 
 Je ziet nu al je commits langskomen. `git log` heeft een heel rijke syntax waarmee je de meest uitgebreide manieren krijgt om de historie te bekijken. 
 
@@ -156,7 +159,7 @@ In de output zie je de naam van de commit ("hash"), de auteur, datum en tijd, en
 
 >VOER UIT:
 
-` git help log `
+`git help log`
 
 Je ziet, heel veel opties om de log vorm te geven.
 Probeer een paar log opties, bijvoorbeeld `git log --oneline --decorate` of 
@@ -184,7 +187,7 @@ Ook bij `diff`: veel opties. Default laat diff van vrij grote blokken de verschi
 
 >Voer uit:
 >
-` git diff -w --word-diff [commit2] [commit1] `
+`git diff -w --word-diff [commit2] [commit1]`
 
 Speel wat met andere diff opties.
 
@@ -256,7 +259,7 @@ Doet `git fetch` en `git merge` na elkaar, en nog wat magic eromheen.
 Meestal zal `git pull` best okee werken, maar soms, bij complexe wijzigingen, willen er nog wel eens allerlei onhandige conflictsituaties optreden. Zie later. In die gevallen is het praktisch om eerst te fetchen, te inspecteren, mogelijk aan te passen en dan te mergen. We komen over dit alles nog te spreken in het onderwerp "branch"
 
 
-## uitleg: conflicten
+## uitleg: verschillende wijzigingen in dezelfde file
 Stel je hebt deze file, genaamd `hithere.txt`:
 
 ```
@@ -333,7 +336,7 @@ Je hebt nu een Branch aangemaakt genaamd "mijnbranch", maar **je zit er nog niet
 
 >Voer uit:
 
-```git checkout mijnbranch```
+`git checkout mijnbranch`
 
 **Nu** zit je er op. Als je een wijziging doet (*) dan komt die dus op de branch.
 
@@ -371,10 +374,8 @@ Fast-forward
  hithere_jouwnaam.txt | 1 +
  1 file changed, 1 insertion(+)
 ```
-```
-cat hithere_jouwnaam.txt
-```
-en de change zit nu ook in de trunk.
+
+Bekijk `hithere_jouwnaam.txt` en je ziet dat de change zit nu ook in de trunk zit.
 
 Let op: je gaat naar de branche waar je het in wilt hebben, en merget daar NAARTOE! 
 Als je branch lang leeft dan is het nodig om met grote regelmaat de wijzigingen die op de trunk plaatsvinden in te mergen, anders loop je al snel zodanig uit de pas dat het stikt van de merge conflicts. Not cool. 
@@ -392,15 +393,29 @@ We hadden het net over "PRODUCTIE" en "PRODUCTIE + n" dat was in abstracto bedoe
  
 `git tag 0.3.1 [hash]`
 
-Taggen is een ding, je kunt retaggen en wat niet al, maar als je eenmaal een tag gepushed hebt moet je er wel afblijven. Zodra een tag publiek is staat hij voor een bepaalde toestand van de codebase waar mensen vanuit gaan. Dus als je iets aan die toestand verandert DAN IS DAT EEN ANDERE VERSIE MET EEN ANDERE NAAM EN DUS EEN ANDERE TAG. 
+Taggen is belangrijk, je kunt retaggen en wat niet al, maar als je eenmaal een tag naar remote gepushed hebt moet je er wel afblijven! Zodra een tag publiek is staat hij voor een bepaalde toestand van de codebase waar mensen vanuit gaan. Dus als je iets aan die toestand verandert DAN IS DAT EEN ANDERE VERSIE MET EEN ANDERE NAAM EN DUS EEN ANDERE TAG. Je kunt met onhandig taggen heel veel verwarring zaaien en dus fouten introduceren. 
 
-Een bekende versioning naming convention is het RUF nummer, Release.Update.Fix waarbij je nog een variant kunt doen met vier nummers: Release.Update.Fix.Buildnr of zoiets. Je moet in je eigen context afspreken in welke situatie je vindt dat iets een release is of een update. Een mooie vuistregel is dat het een Release is als er interfaces veranderen, dus met een breaking change. Of als er een dikke Epic met totaal nieuwe features in zit, of een significante User Interface wijziging, whatever. Maar vind er iets van en houd je er aan.
+Een bekende versioning naming convention is het RUF nummer, Release.Update.Fix waarbij je nog een variant kunt doen met vier nummers: Release.Update.Fix-Buildnummer of zoiets. Je moet in je eigen context afspreken in welke situatie je vindt dat iets een release is of een update. Een mooie vuistregel is dat het een Release is als er interfaces veranderen, dus met een breaking change. Of als er een dikke Epic met totaal nieuwe features in zit, of een significante User Interface wijziging, whatever. 
 
-
-## even tussendoor iets uitchecken: stash
+Maar vind er iets van en houd je er aan.
 
 
 ## diversen: delete, rename
+Soms wil je iets uit de repo verwijderen, dat kan met `git rm`. Dit verwijdert de file zowel uit de directory als uit de index. 
+Als je één of meer files al hebt verwijderd, dan kun je die verwijderingen toevoegen met `git add -A`. Git registreert dan in één keer alle verwijderingen in de tree.
+
+Een rename kan door git automatisch gemanaged worden. Als je al je wijzigingen gecommit hebt en je doet de rename, dan zit git zelf dat het dezelfde file is op grond van dezelfde inhoud. Met `git add -A` wordt de change toegevoegd aan de volgende commit. Je kunt ook expliciet `git mv`gebruiken, die renamet tegelijk de directory en de index.
+
+>NOOT: als je na een rename `git status` draait, dan lijkt het of git een verwijdering en een nieuwe file ziet. Geen zorgen, na `git add -A` wordt het als rename herkend.
+>
+
+## verder lezen
+Git is een heel populair versiebeheersysteem, en er zijn dan ook talloze boeken, sites, blogs, trainingen, video's, oefensites, noem maar op. 
+
+* HET GIT Handboek staat op <https://git-scm.com/book/en/v2>, dat is behoorlijk diepgaand. 
+* Zoals boven al genoemd is er een coole branching oefensite op <http://learngitbranching.js.org>
+* compact overzicht met nog meer "verder lezen": <http://rogerdudler.github.io/git-guide/>
+* 
 
 ## ehbo: oh shit, git
 
