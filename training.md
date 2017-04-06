@@ -10,6 +10,15 @@ Git beschermt je tegen chaos door je creatieproces in veilige stappen te verdele
 
 *   git for windows => run console from: windows prompt (middelste), CRLF:checkout to CRLF-commit to LF (bovenste), TTY: select zelf 
 
+!["setup components "](./Git setup components.png)
+!["setup start menu"](./Git setup start menu folder.png)
+!["setup HTTPS"](./Git setup HTTPS.png)
+!["setup CRLF"](./Git setup CRLF Handling.png)
+!["setup PATH"](./Git setup PATH env.png)
+!["setup TTY"](./Git setup TTY.png)
+!["setup extra"](./Git setup extra.png)
+
+
 Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog op die GUI tools terug.
 
 Na installatie moet je jezelf bekend maken als user.
