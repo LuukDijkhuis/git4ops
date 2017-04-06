@@ -49,7 +49,8 @@ Of:
 git init 
 `
 > dit maakt van je **current directory** een git repository
- 
+
+De meeste git installaties voegen een speciale commandline extension toe die je helpt interessante informatie van je repo te zien. Afhankelijk van de versie van git (Mac, Linux, Windows) ziet dat er anders uit en gedraagt het zich ook anders. We laten daar later nog wel wat van zien. 
 
 ### een bestaande repo gebruiken: clone
 Als er al een repository bestaat voor dit product kun je er mee gaan werken door `git clone username@host:repo`
@@ -62,7 +63,6 @@ Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle sta
 @@@TODO@@@ AANMAKEN en voeg een README.txt toe /@@@TODO@@@
 
 Je hebt nu een kopie van de repo lokaal staan: je kunt aan het werk.
-
 
 ## hoe staan we er voor: status
 Je kunt nu files aanmaken op je lokale repo directory. Met `git status` kun je kijken in welke toestand die files zich bevinden. Kent git de file al of niet, heb je iets veranderd waar git nog niet van weet etc. 
@@ -100,6 +100,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ```
 De uitleg spreekt voor zich: we zien een file in de repo directory staan die git nog niet kent. Verder een aantal tips voor wat je nu kunt doen. 
+
+
 
 ## uitleg: de staging area
 Even een uitstapje naar wat er nu gebeurt. (whiteboard)
@@ -359,7 +361,11 @@ Of als shortcut `git checkout -b mijnbranch` (in één keer aanmaken en erop gaa
 
 Tip: <http://learngitbranching.js.org>, erg coole oefeningen in branchen en andere git acties.
 
->Voer uit: je zit nu op "mijnbranch". Maak een wijziging in hithere_jouwnaam.txt, en commit de wijziging. `git checkout master` brengt je weer terug naar de trunk. `cat hithere_jouwnaam.txt` en je ziet dat je wijziging hier niet staat. `git checkout mijnbranch` en `cat hithere_jouwnaam.txt` en ja hoor daar is je wijziging weer.
+>je zit nu op "mijnbranch". 
+>
+>Voer uit:
+>
+>Maak een wijziging in hithere_jouwnaam.txt, en commit de wijziging. `git checkout master` brengt je weer terug naar de trunk. `cat hithere_jouwnaam.txt` en je ziet dat je wijziging hier niet staat. `git checkout mijnbranch` en `cat hithere_jouwnaam.txt` en ja hoor daar is je wijziging weer.
 
 Waarom zou je willen branchen? Bijvoorbeeld omdat je grote wijzigingen aan het maken bent in versie PRODUCTIE + n en je moet een verandering doen op versie PRODUCTIE. Check dan PRODUCTIE uit, maak een branch, schrijf een test, doe de wijziging, test hem en je hebt een geïsoleerde aanpassing op de productie versie. Zorg daarna dat je de aanpassing ook terugbrengt naar de Trunk.
 
