@@ -1,12 +1,12 @@
-#git4ops
+#git4ops - een git training voor "Operations"
 
 
 ## wat is git
-git is een tool die je code tegen jezelf en tegen anderen beschermt. Je kunt je scripts veranderen, stukmaken, verbeteren, wat je maar wilt, maar je kunt altijd weer terug omdat je steeds tussentijds elke toestand opslaat. Met git kun je zonder zorgen met meerdere mensen tegelijk aan code werken. Maar het helpt je ook in je eentje. Het is een vangnet tegen vergissingen, daardoor ga je makkelijker mooie dingen proberen: het kan toch geen kwaad, tot je het publiceert.
+git is een tool die je code tegen jezelf en tegen anderen beschermt. Je kunt je code vrijuit veranderen, stukmaken, verbeteren, wat je maar wilt, maar je kunt altijd weer terug omdat git steeds tussentijds elke toestand opslaat. Met git kun je zonder zorgen met meerdere mensen tegelijk aan code werken. Maar het helpt je ook als je in je eentje werkt! Het is een vangnet tegen vergissingen, daardoor ga je makkelijker mooie dingen proberen: het kan toch geen kwaad, tot je het publiceert.
 
-Git beschermt je tegen chaos door je creatie proces in veilige stappen te verdelen. Elke stap krijgt een label dat uniek is over de hele codebase heen.
+Git beschermt je tegen chaos door je creatieproces in veilige stappen te verdelen. Elke stap krijgt een label dat uniek is over de hele codebase heen.
 
-## install, identificatie
+## install
 
 *   git for windows => run console from: windows prompt (middelste), CRLF:checkout to CRLF-commit to LF (bovenste), TTY: select zelf 
 
@@ -17,15 +17,15 @@ Na installatie moet je jezelf bekend maken als user.
 >VOER UIT:
 
 ```
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+$ git config --global user.name "jouw naam"
+$ git config --global user.email jouwnaam@umcg.nl
 ```
 > voer deze commando's uit in je eigen omgeving. Gebruik je UMCG email adres, dan kun je straks vanzelf bij de echte omgeving.
 
 Met git config kun je nog veel meer dingen regelen, zoals allerlei default gedrag, je standaard editor, je diff tool etc. Dat laten we nu even voor wat het is.
    
-## een nieuwe repository aanmaken of een bestaande gebruiken: init en clone
-### een nieuwe repo aanmaken
+## de repository: init en clone
+### een nieuwe repo aanmaken: init
 Git organiseert alles van een product/project in een "repository". Je kunt een nieuwe aanmaken, of meegaan op een al bestaande voor dat product.
 Laten we een nieuwe aanmaken: git init (van "initialize")
 >Voer uit:
@@ -42,7 +42,7 @@ git init
 > dit maakt van je **current directory** een git repository
  
 
-### een bestaande repo gebruiken
+### een bestaande repo gebruiken: clone
 Als er al een repository bestaat voor dit product kun je er mee gaan werken door `git clone username@host:repo`
 Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle status en historie. 
 
@@ -425,6 +425,10 @@ Nu ben je weer heel. Wat betekent dit precies:
 
 Noot 1: reset --hard verplaatst niet alleen een pointer zodat je op een andere node zit, hij verandert echt je working directory. Wat je daar aan wijzigingen had staan wordt weggegooid. En je HEAD wijst daarna naar die situatie.
 Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietjepuk" had genoemd, in dat geval is het natuurlijk `git reset --hard pietjepuk/master`, er is niets magisch aan "origin".
+
+## GUI tools
+Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com). GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
+
 
 
 ## verder lezen
