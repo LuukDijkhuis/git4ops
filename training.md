@@ -14,7 +14,7 @@ Git beschermt je tegen chaos door je creatieproces in veilige stappen te verdele
 <img src="./git setup components.png" width="300">
 <img src="./git setup start menu folder.png" width="300">
 <img src="./git setup HTTPS.png" width="300">
-<img src="./git setup CRLF Handling.png" width="300">
+<img src="./git setup CRLF handling.png" width="300">
 <img src="./git setup PATH env.png" width="300">
 <img src="./git setup TTY.png" width="300">
 <img src="./git setup extra.png" width="300">
