@@ -10,14 +10,14 @@ Git beschermt je tegen chaos door je creatieproces in veilige stappen te verdele
 
 *   git for windows => download van https://git-scm.com/download/win, let even op de juiste 32/64 bits versie voor jouw systeem. Hieronder een paar wel handige setup keuzes, maar doe vooral wat je zelf prettig vindt.
 
-<img src="./Git setup components.png" width="300">
-<img src="./Git setup components.png" width="300">
-<img src="./Git setup start menu folder.png" width="300">
-<img src="./Git setup HTTPS.png" width="300">
-<img src="./Git setup CRLF Handling.png" width="300">
-<img src="./Git setup PATH env.png" width="300">
-<img src="./Git setup TTY.png" width="300">
-<img src="./Git setup extra.png" width="300">
+<img src="./git setup components.png" width="300">
+<img src="./git setup components.png" width="300">
+<img src="./git setup start menu folder.png" width="300">
+<img src="./git setup HTTPS.png" width="300">
+<img src="./git setup CRLF Handling.png" width="300">
+<img src="./git setup PATH env.png" width="300">
+<img src="./git setup TTY.png" width="300">
+<img src="./git setup extra.png" width="300">
 
 Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog even op die GUI tools terug.
 
