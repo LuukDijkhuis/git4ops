@@ -8,18 +8,18 @@ Git beschermt je tegen chaos door je creatieproces in veilige stappen te verdele
 
 ## install
 
-*   git for windows => run console from: windows prompt (middelste), CRLF:checkout to CRLF-commit to LF (bovenste), TTY: select zelf 
+*   git for windows => download van https://git-scm.com/download/win, let even op de juiste 32/64 bits versie voor jouw systeem. Hieronder een paar wel handige setup keuzes, maar doe vooral wat je zelf prettig vindt.
 
-!["setup components "](./Git setup components.png)
-!["setup start menu"](./Git setup start menu folder.png)
-!["setup HTTPS"](./Git setup HTTPS.png)
-!["setup CRLF"](./Git setup CRLF Handling.png)
-!["setup PATH"](./Git setup PATH env.png)
-!["setup TTY"](./Git setup TTY.png)
-!["setup extra"](./Git setup extra.png)
+<img src="./Git setup components.png" width="300">
+<img src="./Git setup components.png" width="300">
+<img src="./Git setup start menu folder.png" width="300">
+<img src="./Git setup HTTPS.png" width="300">
+<img src="./Git setup CRLF Handling.png" width="300">
+<img src="./Git setup PATH env.png" width="300">
+<img src="./Git setup TTY.png" width="300">
+<img src="./Git setup extra.png" width="300">
 
-
-Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog op die GUI tools terug.
+Er zijn ook diverse GUI tools, maar het is vaak beter om het via de commandline te leren, we komen later nog even op die GUI tools terug.
 
 Na installatie moet je jezelf bekend maken als user.
 
@@ -437,7 +437,7 @@ Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietje
 
 ## GUI tools
 Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com). GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
-
+### DEMOOTJE SourceTree
 
 
 ## verder lezen
