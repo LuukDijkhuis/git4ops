@@ -30,9 +30,8 @@ Git organiseert alles van een product/project in een "repository". Je kunt een n
 Laten we een nieuwe aanmaken: git init (van "initialize")
 >Voer uit:
 
-`
-git init myfirstrepo
-`
+`git init myfirstrepo`
+
 > maakt een directory 'myfirstrepo' aan en maakt daar een git repo van 
 
 Of:
@@ -53,7 +52,7 @@ Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle sta
 
 @@@TODO@@@ AANMAKEN en voeg een README.txt toe /@@@TODO@@@
 
-Je hebt een kopie van de trainings repo lokaal staan: Nu kun je aan het werk.
+Je hebt nu een kopie van de repo lokaal staan: je kunt aan het werk.
 
 
 ## hoe staan we er voor: status
@@ -125,7 +124,7 @@ Je hebt nu klaargezet wat je wilt bewaren, dus daar gaan we dan:
 Met git commit stuur je het setje changes dat je met git add had toegevoegd naar de staging area (zie plaatje). 
 > Een correcte commit message (`-m "commit message"` ) is echt SU-PERbelangrijk. Je kunt daarmee, samen met het selectieve klaarzetten voor commit (`git add`), later in de log precies terugzien wat de reden was van deze verandering en welke files daarvoor geraakt zijn. Iets waar je heel blij mee zult zijn zodra je het nodig hebt. En je gaat het nodig hebben :-)
 
-<br/>
+</br>
 > VOER UIT:
 
 `git status`
@@ -138,7 +137,8 @@ git commit -a -m "adds remark to the README for educational purposes"
 git status
 ```
 
->De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commit. >Wees daar voorzichtig mee, maar het is wel heel handig als je een heleboel files hebt geraakt voor één logische wijziging, dan hoef je ze niet allemaal per stuk toe te voegen, waardoor je minder makkelijk eentje vergeet. 
+>De -a flag voegt in één klap alle nog openstaande wijzigingen toe aan de commit. 
+>Wees daar voorzichtig mee, maar het is wel heel handig als je een heleboel files hebt geraakt (en verwijderd) voor één logische wijziging, dan hoef je ze niet allemaal per stuk toe te voegen, waardoor je minder makkelijk eentje vergeet. 
 
 >Het is conventie om code comments en git commit comments in het Engels te schrijven, zodat iedereen later kan lezen wat er aan de hand is. Als je het heel netjes wilt doen (en dat willen we) dan schrijf je in de derde persoon: [this change] "adds remark to" of als imperatief "add remark to" etc. Je ziet beide in de praktijk. Kies als team één stijl.
 
@@ -400,14 +400,32 @@ Een bekende versioning naming convention is het RUF nummer, Release.Update.Fix w
 Maar vind er iets van en houd je er aan.
 
 
-## diversen: delete, rename
+## diversen: delete, rename, reset
+### delete
 Soms wil je iets uit de repo verwijderen, dat kan met `git rm`. Dit verwijdert de file zowel uit de directory als uit de index. 
 Als je één of meer files al hebt verwijderd, dan kun je die verwijderingen toevoegen met `git add -A`. Git registreert dan in één keer alle verwijderingen in de tree.
 
+### rename
 Een rename kan door git automatisch gemanaged worden. Als je al je wijzigingen gecommit hebt en je doet de rename, dan zit git zelf dat het dezelfde file is op grond van dezelfde inhoud. Met `git add -A` wordt de change toegevoegd aan de volgende commit. Je kunt ook expliciet `git mv`gebruiken, die renamet tegelijk de directory en de index.
 
 >NOOT: als je na een rename `git status` draait, dan lijkt het of git een verwijdering en een nieuwe file ziet. Geen zorgen, na `git add -A` wordt het als rename herkend.
 >
+
+### reset
+Stel je hebt het helemaal kapot gemaakt, je weet niet meer wat je moet fixen en je wilt huilend terugkruipen naar de stabiele staat van de remote repository. Stil maar, er is hoop: 
+```
+git fetch origin
+git reset --hard origin/master
+```
+Nu ben je weer heel. Wat betekent dit precies:
+
+`git fetch origin` : haal de huidige staat van de remote repository op, maar probeer niet te mergen
+`git reset --hard` : verandert je working directory zo dat alles precies zo is als de node die je opgeeft, in dit geval:
+`origin/master` : de meest recente staat van de master trunk van de remote repo.
+
+Noot 1: reset --hard verplaatst niet alleen een pointer zodat je op een andere node zit, hij verandert echt je working directory. Wat je daar aan wijzigingen had staan wordt weggegooid. En je HEAD wijst daarna naar die situatie.
+Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietjepuk" had genoemd, in dat geval is het natuurlijk `git reset --hard pietjepuk/master`, er is niets magisch aan "origin".
+
 
 ## verder lezen
 Git is een heel populair versiebeheersysteem, en er zijn dan ook talloze boeken, sites, blogs, trainingen, video's, oefensites, noem maar op. 
