@@ -1,4 +1,4 @@
-#git4ops - een git training voor "Operations"
+# git4ops - een git training voor "Operations"
 
 
 ## wat is git
