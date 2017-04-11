@@ -220,7 +220,7 @@ remote, origin, master
 
 !["git remote add origin"](./git_remote.png)
 
-Let op: "origin" is alleen maar de default naam, je mag helemaal zelf weten hoe je die remote repo zelf wilt refereren. Het is wel handig daar iets over af te spreken, want als je met een collega pairt of iemand komt je even helpen dan is het niet praktisch als iedereen een andere naam bedenkt voor een bepaalde remote repo ref.
+Let op: "origin" is alleen maar de default naam, je mag helemaal zelf weten hoe je die remote repo zelf wilt refereren. Het is wel handig daar iets over af te spreken, want als je met een collega pairt of iemand komt je even helpen dan is het niet praktisch als iedereen lokaal een andere naam heeft voor een bepaalde remote repo ref.
 
 ## publiceren: push
 Als je een aantal commits hebt verzameld die samen een logisch samenhangend brokje functionaliteit vormen dan kun je publiceren wat je hebt gemaakt. Hoe groot dat brokje is hangt van de context af, bij een bugfix is het soms maar één character :-) In het algemeen is de richtlijn: mik op KLEINE brokjes, oftewel: wacht niet te lang met publiceren. Hoe eerder de integratie, hoe kleiner de kans op uit elkaar lopen van versies.
@@ -443,16 +443,21 @@ Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietje
 
 ## GUI tools
 Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com). GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
-### DEMOOTJE SourceTree
+### << Korte DEMO SourceTree >>
 
 
 ## verder lezen
 Git is een heel populair versiebeheersysteem, en er zijn dan ook talloze boeken, sites, blogs, trainingen, video's, oefensites, noem maar op. 
 
-* HET GIT Handboek staat op <https://git-scm.com/book/en/v2>, dat is behoorlijk diepgaand. 
+* ***Het*** GIT Handboek staat op <https://git-scm.com/book/en/v2>, dat is behoorlijk diepgaand. 
 * Zoals boven al genoemd is er een coole branching oefensite op <http://learngitbranching.js.org>
 * compact overzicht met nog meer "verder lezen": <http://rogerdudler.github.io/git-guide/>
-* 
 
 ## ehbo: oh shit, git
 
+Ja, Git is enorm cool, maar soms vraagt het wat nadenken om te weten wat je moet doen als er iets niet zo gaat als je verwacht. Het is altijd geheel logisch, maar soms moet je meer weten van de onderliggende structuren om te snappen waarom het logisch is :-)
+
+Er is een handige site, genaamd "oh shit, git", waar een aantal vaak voorkomende vraagtekens worden behandeld. Hij chargeert een beetje, maar dat is juist wel grappig.
+<http://ohshitgit.com> 
+
+**NOOT: er staat veel in maar ook veel dat je in dit stadium absoluut niet nodig gaat hebben, dus wanhoop niet**
