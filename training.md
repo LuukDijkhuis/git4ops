@@ -60,7 +60,7 @@ Je krijgt dan de hele inhoud van de repo naar je toegestuurd, inclusief alle sta
 
 `git clone https://github.com/git4opsumcg/git4opstraining`
 
-@@@TODO@@@ AANMAKEN en voeg een README.txt toe /@@@TODO@@@
+@TODO@ AANMAKEN en voeg een README.txt toe /@TODO@
 
 Je hebt nu een kopie van de repo lokaal staan: je kunt aan het werk.
 
@@ -445,7 +445,7 @@ Noot 1: reset --hard verplaatst niet alleen een pointer zodat je op een andere n
 Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietjepuk" had genoemd, in dat geval is het natuurlijk `git reset --hard pietjepuk/master`, er is niets magisch aan "origin".
 
 ## GUI tools
-Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com). GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
+Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com) en er is er ook eentje van git zelf, gitk. GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
 ### << Korte DEMO SourceTree >>
 
 
@@ -464,3 +464,7 @@ Er is een handige site, genaamd "oh shit, git", waar een aantal vaak voorkomende
 <http://ohshitgit.com> 
 
 ## github.com, bitbucket.com, 
+git zelf is niet geassocieerd aan een leverancier van remote repository tooling. Er zijn twee grote spelers, github.com en bitbucket.com. Bitbucket is van Atlassian. Github.com is inmiddels zo groot dat mensen denken dat git van github is, en dat de tooling die github aanbiedt (pull requests bijvoorbeeld) onderdeel zijn van git. Een belangrijk verschil tussen github en bitbucket is dat de gratis versie bij github geen private repo's toestaat, daar moet je voor betalen. Bij bitbucket heb je die optie wel. Het is een kwestie van smaak welke repo hoster je prettig vindt.
+
+## UMCG remote repos
+In het UMCG maken we in het algemeen gebruik van een interne repo omgeving, die van Microsoft TFS. @TODO@ [meer volgt] /@TODO@
