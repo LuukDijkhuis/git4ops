@@ -199,8 +199,11 @@ Ook bij `diff`: veel opties. Default laat diff van vrij grote blokken de verschi
 >Voer uit:
 >
 `git diff -w --word-diff [commit2] [commit1]`
+>
+> Speel wat met andere diff opties.
 
-Speel wat met andere diff opties.
+Let op: Git maakt verschil tussen verschillende niveaus "diff". Zie plaatje.
+!["git diff smaken"](./git diff smaken.png)
 
 
 ## kies welke versie je wilt bekijken: git checkout
@@ -212,7 +215,7 @@ je krijgt de codebase dan precies in de toestand waarin hij toen was. Het is een
 
 De toestand die je op zeker moment hebt uitgecheckt heeft een logische naam: "HEAD". 
 
-
+Noot: als je werkdirectory niet "clean" is (dwz, nog wijzigingen heeft die niet gestaged zijn)
 
 ## alleen voor jezelf of ook voor anderen: git remote
 UITLEG: Whiteboard!
@@ -460,4 +463,4 @@ Ja, Git is enorm cool, maar soms vraagt het wat nadenken om te weten wat je moet
 Er is een handige site, genaamd "oh shit, git", waar een aantal vaak voorkomende vraagtekens worden behandeld. Hij chargeert een beetje, maar dat is juist wel grappig.
 <http://ohshitgit.com> 
 
-**NOOT: er staat veel in maar ook veel dat je in dit stadium absoluut niet nodig gaat hebben, dus wanhoop niet**
+## github.com, bitbucket.com, 
