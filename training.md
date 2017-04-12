@@ -448,6 +448,9 @@ Noot 2: origin is maar een naam, het kan best zijn dat je je remote repo "pietje
 Er zijn inmiddels al flink wat GUI tools voor git in omloop, zowel betaald als open source. Een heel bekende is Sourcetree (www.sourcetree.com), een andere, nieuwe loot is GitKraken (www.gitkraken.com) en er is er ook eentje van git zelf, gitk. GUI tools hebben als voordeel dat je meteen heel visueel hebt wat er gebeurt (welke files zijn veranderd, diffs en conflictresolution, branches, etc). Het nadeel kan zijn dat er onder water allerlei git commando's worden uitgevoerd waar je niet zelf bij bent. Het is sowieso goed om de bare bones commandline tools goed te kennen, om bij onverwachte situaties echt zelf in te kunnen grijpen. 
 ### << Korte DEMO SourceTree >>
 
+## Git en binary files
+Git werkt niet heel goed met grote binary files. Dat is wel te begrijpen, want git houdt diffs bij, en die zijn met binary files niet goed te bepalen. Dus elke nieuwe versie leidt tot een kopie. Met grote bestanden wordt dat snel onwerkbaar. Door het gebrek aan diff bij binaries zie je ook dat (ontwikkel-)documentatie vaak wordt geschreven in een text-only markup taal. Zoals dit document, dat in MarkDown is gemaakt. Je wilt je documentatie graag zo dicht mogelijk bij de code houden, en deze mee laten lopen met de versioning Er zijn wel middelen om binaire files toch met Git te managen, bijvoorbeeld git-annex, git-LFS of 
+
 
 ## verder lezen
 Git is een heel populair versiebeheersysteem, en er zijn dan ook talloze boeken, sites, blogs, trainingen, video's, oefensites, noem maar op. 
